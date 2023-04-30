@@ -1,0 +1,9 @@
+{
+    "name": "cinema-ticket project",
+    "port": 4000,
+    "db" : {
+        "address":"mongodb://localhost:27017/cinematicket"
+    },
+
+    "jwt_key": "dmgoikdjifgmjkhpoirttkhokopf5iy95kgtlfg"
+}
