@@ -8,12 +8,12 @@ const categoriesRouter= require("./categories/categories")
 const newsRouter= require("./news/news")
 const salestableRouter= require("./salestable/salestable")
 
-const {isLoggedIn, isAdmin }= require("../middleware/auth");
+const {isLoggedIn, isAdmin, isAuthenticate }= require("../middleware/auth");
 const error = require("../middleware/error")
 
 
 
-router.use("/auth", authRouter);
+router.use("/auth",isAuthenticate, authRouter);
 router.use("/user",isLoggedIn ,userRouter);
 router.use("/admin",isLoggedIn, isAdmin ,adminRouter);
 router.use("/categories", categoriesRouter)

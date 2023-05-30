@@ -6,7 +6,9 @@ const UserSchema = new mongoose.Schema({
     username: {type: String, required: true},
     phone_number: {type: String, required: true},
     password: {type: String, required: true},
-    isadmin: {type: Boolean, default:false}
+    isadmin: {type: Boolean, default:false},
+    resetPasswordToken : {type:String, default:undefined},
+    resetPasswordExpires: {type:String, default:undefined}
 })
 mongoose.plugin(timestamp);
 

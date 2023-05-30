@@ -18,4 +18,16 @@ module.exports = new class {
             check("password").notEmpty().withMessage("کلمه عبور نمیتواند خالی باشد")
         ]
     }
+
+    forgetPasswordValidator(){
+        return [
+            check("email").isEmail().withMessage("ایمیل نادرست است"),
+        ]
+    }
+
+    passwordResetValidator(){
+        return [
+            check("password").notEmpty().withMessage("کلمه عبور نمیتواند خالی باشد")
+        ]
+    }
 };

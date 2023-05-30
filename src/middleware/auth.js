@@ -23,8 +23,19 @@ async function isAdmin(req,res,next){
     next()
 }
 
+const isAuthenticate = (req, res, next) => {
+    if (req.session && req.session.user) {
+      // User is authenticated, so continue to the next middleware function
+      res.redirect('/auth/login');
+    } else {
+      // User is not authenticated, so redirect to the login page
+      next();
+    }
+  };
+
 
 module.exports = {
     isLoggedIn,
-    isAdmin
+    isAdmin,
+    isAuthenticate
 }

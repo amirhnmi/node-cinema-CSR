@@ -17,4 +17,18 @@ router.post(
     controller.login
 )
 
+router.post(
+    "/forget_password",
+    validation.forgetPasswordValidator(),
+    controller.validate,
+    controller.forgetPassword
+)
+
+router.post(
+    "/password_reset",
+    validation.passwordResetValidator(),
+    controller.validate,
+    controller.passwordReset
+)
+
 module.exports = router;
